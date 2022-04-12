@@ -1,0 +1,12 @@
+F:\Studying\C#\TournamentProject\TournamentProject\bin\Debug\net6.0\TournamentProject.deps.json
+F:\Studying\C#\TournamentProject\TournamentProject\bin\Debug\net6.0\TournamentProject.dll
+F:\Studying\C#\TournamentProject\TournamentProject\bin\Debug\net6.0\TournamentProject.pdb
+F:\Studying\C#\TournamentProject\TournamentProject\obj\Debug\net6.0\TournamentProject.csproj.AssemblyReference.cache
+F:\Studying\C#\TournamentProject\TournamentProject\obj\Debug\net6.0\TournamentProject.GeneratedMSBuildEditorConfig.editorconfig
+F:\Studying\C#\TournamentProject\TournamentProject\obj\Debug\net6.0\TournamentProject.AssemblyInfoInputs.cache
+F:\Studying\C#\TournamentProject\TournamentProject\obj\Debug\net6.0\TournamentProject.AssemblyInfo.cs
+F:\Studying\C#\TournamentProject\TournamentProject\obj\Debug\net6.0\TournamentProject.csproj.CoreCompileInputs.cache
+F:\Studying\C#\TournamentProject\TournamentProject\obj\Debug\net6.0\TournamentProject.dll
+F:\Studying\C#\TournamentProject\TournamentProject\obj\Debug\net6.0\refint\TournamentProject.dll
+F:\Studying\C#\TournamentProject\TournamentProject\obj\Debug\net6.0\TournamentProject.pdb
+F:\Studying\C#\TournamentProject\TournamentProject\obj\Debug\net6.0\ref\TournamentProject.dll
