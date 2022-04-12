@@ -1,0 +1,140 @@
+create table tournaments (
+    Tournamentid int primary key auto_increment,
+    tournamentName varchar(50),
+    EntryFee decimal
+);
+
+create table prizes (
+    prizeID int primary key auto_increment,
+    PlaceNumber int ,
+    PlaceName varchar(50),
+    PrizeAmount decimal,
+    PrizePercentage double
+);
+
+
+create table tournamentPrizes(
+ tournamentPrizesID int primary key auto_increment,
+ prizeID int,
+ Tournamentid int
+);
+
+Alter table tournamentPrizes
+ADD FOREIGN KEY (prizeID) REFERENCES prizes(prizeID);
+
+Alter table tournamentPrizes
+ADD FOREIGN KEY (Tournamentid) REFERENCES tournaments(Tournamentid);
+
+
+create table teams (
+teamID int primary key auto_increment ,
+teamName varchar(100)
+);
+
+create table tournamentEntries (
+    entriesID int primary key auto_increment,
+    Tournamentid int ,
+    teamID int 
+);
+
+alter table tournamentEntries
+ADD FOREIGN KEY (Tournamentid) REFERENCES tournaments(Tournamentid);
+
+alter table tournamentEntries
+Add Foreign key (teamID) references teams(teamID);
+
+create table person (
+ personID int primary key auto_increment,
+ firstName varchar(100) not null ,
+ LastName varchar(100) not null,
+ email varchar (200) not null,
+ cellPhone varchar (20)
+);
+
+
+create table teamMembers (
+ teamMembersID int primary key auto_increment, 
+ teamID int ,
+ personID int 
+);
+
+alter table teamMembers
+add foreign key (teamID ) references teams(teamID);
+
+alter table teamMembers
+add foreign key (personID) references person(personID);
+
+create table matchUps (
+    matchUpID int primary key auto_increment,
+    winnerId int ,
+    MatchupRound int, 
+    Tournamentid int
+);
+
+alter table matchUps
+add foreign key (winnerID) references teams(teamID);
+
+alter table matchUps
+add foreign key (Tournamentid) references tournaments(Tournamentid);
+
+create table matchUpEntries (
+    matchUpEntriesID int primary key auto_increment,
+    matchUpID int,
+    parentMatchUpID int,
+    teamCompetingID int,
+    Score double
+);
+
+alter table matchUpEntries
+add foreign key (matchUpID) references matchUps(matchUpID);
+
+alter table matchUpEntries
+add foreign key (teamCompetingID) references teams(teamID);
+
+create procedure InsertPrizes ( placeNumber int, placeName varchar(50),
+prizeAmount decimal, prizePercentage double)
+begin
+insert into prizes (PlaceNumber, PlaceName, PrizeAmount, PrizePercentage)VALUES(placeNumber,placeName,prizeAmount,prizePercentage);
+ end
+
+
+create procedure InsertPerson ( firstName varchar(100) , LastName varchar(100),
+email varchar(200), cellPhone varchar(20))
+begin
+insert into person ( firstName, LastName, email, cellPhone)VALUES(firstName,LastName,email,cellPhone);
+ end
+
+create procedure GetPerson () 
+    begin
+    select * from person;
+    end
+
+create procedure GetTeam () 
+    begin
+    select * from teams;
+    end
+
+create procedure GetTeamMembers ( Team_ID int) 
+    begin
+    select * from teammembers
+    inner JOIN person
+    on person.personID = teamMembers.personID
+    where teammembers.teamID = Team_ID; 
+    end
+
+create procedure GetTournament () 
+    begin
+    select * from tournaments;
+    end
+
+select * from person;
+select * from teams; 
+select * from teammembers;
+select * from prizes;
+select * from tournaments;
+select * from matchups;
+select * from matchupentries;
+select * from tournamentprizes;
+select * from tournamententries;
+
+
